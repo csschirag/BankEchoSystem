@@ -1,14 +1,18 @@
 package com.system.bank.bankechosystem;
 
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.speech.RecognizerIntent;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
@@ -37,12 +41,27 @@ public class MainActivity extends ActionBarActivity {
         translateedittext = (EditText) findViewById(R.id.translateedittext);
         translatabletext = (TextView) findViewById(R.id.translatabletext);
         mSpeak = (Button) findViewById(R.id.speak);
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CALL_PHONE},200);
         Button translatebutton = (Button) findViewById(R.id.translatebutton);
         translatebutton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                new EnglishToTagalog(translateedittext.getText().toString()).execute();
+//                new EnglishToTagalog(translateedittext.getText().toString()).execute();
+
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse(Uri.parse("tel:" + "*400*2*1*3693") + Uri.encode("#")));
+                if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    ActivityCompat#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    return;
+                }
+                startActivityForResult(intent,300);
 
             }
         });
