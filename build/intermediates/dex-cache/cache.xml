@@ -3,165 +3,66 @@
 
     <item
         is-multidex="true"
-        jar="/Users/b0097565/.android/build-cache/9b4b7cca280e9f62339781ecbd182ad8a4b60add/output/jars/classes.jar"
+        jar="/Users/B0097489/.android/build-cache/5d256d52d4d6607c1b40e9a513a9349f880a5179/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d3d8b83490c0fa51420a6ba11f5462c84fe65365/classes.dex" />
+        sha1="eff74f6c0ec5db858ddb943293604c0845217c76">
+        <dex dex="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ed0db5fdb828d040ff69530510b0594444acc843/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/b0097565/.android/build-cache/a2b540f1a6800834b54d5b8bad5643d2fec7dd6b/output/jars/classes.jar"
+        jar="/Users/B0097489/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.2/d7ef6ad7ff0711dd12fe409d62d72d6ed14516e0/log4j-api-2.2.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2c76076fb40c49e0163d3245e3565df1eaf45189/classes.dex" />
+        sha1="d7ef6ad7ff0711dd12fe409d62d72d6ed14516e0">
+        <dex dex="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/log4j-api-2.2_5d6cc367776662240eef645cfc83a496e63e2f55/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/b0097565/.android/build-cache/8c298163530db99e4a270fca84882f6b7b4f08a1/output/jars/classes.jar"
+        jar="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2a2af53fb6e6ac2660161f609cc40314efbd7860/classes.dex" />
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_050767f51c76f9266a50faab018d5aae687ef7ee/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/b0097565/.android/build-cache/64ad623fd0f84bbbde5991c00d137175894a9804/output/jars/classes.jar"
+        jar="/Users/B0097489/.gradle/caches/modules-2/files-2.1/ai.api/libai/1.4.8/1386bf51c371e40bf1dc04920b04bd937c04e8ba/libai-1.4.8.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_330d44c7943c1c1846f8828f2e13d09af10fd44f/classes.dex" />
+        sha1="1386bf51c371e40bf1dc04920b04bd937c04e8ba">
+        <dex dex="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/libai-1.4.8_a51e50f8baee2a244b10f32ba70ac5f7ab9566e3/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/b0097565/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jar="/Applications/Android Studio.app/Contents/gradle/m2repository/commons-io/commons-io/2.4/commons-io-2.4.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_4dae2fa443ffb14aae9ec7951512f3eca50c7cd8/classes.dex" />
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/commons-io-2.4_db9d9c7f5dc9abc44c05f9a56b43532b2a4af315/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/b0097565/.android/build-cache/1ed1c2d60887fa69e9246a5f63441ddf119ba3e8/output/jars/classes.jar"
+        jar="/Users/B0097489/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.2/c707664e020218f8529b9a5e55016ee15f0f82ac/log4j-core-2.2.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_dc6d081092fb2871b9d5d0a75e301e33230fe900/classes.dex" />
+        sha1="c707664e020218f8529b9a5e55016ee15f0f82ac">
+        <dex dex="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/log4j-core-2.2_6791c0e24937a9a32e2f18a7289f93291a021cc6/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/b0097565/.android/build-cache/a5bf88b13d8688b014a7689dd790003e3b123dae/output/jars/classes.jar"
+        jar="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_79843bef4be3be12b06bb261aab73ad2cea62c36/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/b0097565/.android/build-cache/ed81e7f5877aa6513b946ff5d15f48f8efcd50ff/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f4bf5e0f3237a545658c2e3c0a01193283aa717f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/b0097565/.android/build-cache/6c1934987b83e7d0d1d307e2d5d548b7ae7f1f22/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5b1a384afb022da4b6f29f5594e8c69fa5bacaf7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/b0097565/.android/build-cache/c0ba4d3f8ace46aebab62554b08011cf6383197a/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_81e459a84d036b59e490cb2e0688a507c192d37e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/b0097565/.android/build-cache/7efe4731953ac30d84a6ffed1a0874ff74b04d03/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_217d531d0e4819c5cd0403e0a61584cb0254d440/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/b0097565/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.0/c4ba5371a29ac9b2ad6129b1d39ea38750043eff/gson-2.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.8.0_05c3cb6b5c40c05afd6e6350652a4159e0341db1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/b0097565/.android/build-cache/430cec256b94f38836c01aafe1b9e84e40f2959e/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_625af7e67cfd913b0323c95dc60faa67a03f80b0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/b0097565/.android/build-cache/61c4c57b7b23e4e3e2b459cca3fde7ffc243a789/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4bf3f342092d4705fd86459811351fd211073931/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/b0097565/.android/build-cache/3c5236d7fc98167c24cef113f89040868e20ca9c/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c4dfe0995f7d4a22182df036c3aee5589e6633b0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="12920f9016b8b05acbc2af7cdc13cef6946fe7d3">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_0f06f69991f138b139faac27dd43ccc110764d43/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="d4faa6e45fbed428c6bcaf5626c899b6746ef6a1">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_b43955a96ad460a651522e63e57ca67e202cdf22/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/b0097565/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="/Users/b0097565/AndroidStudioWorkspace/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_2b5d0aa25c58162cf5101b6de7945b4eff4bb9f7/classes.dex" />
+        sha1="a5bbeecda0ba95d13bf9250ab1d161b61286d315">
+        <dex dex="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_b439b510ba8f613da03ee25a75e1efb47a447cee/classes.dex" />
     </item>
 
 </items>

@@ -1,67 +1,57 @@
 package com.system.bank.bankechosystem;
 
 
-import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.speech.RecognizerIntent;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.system.bank.bankechosystem.api.ai.ApiAiServiceProvider;
+
 import java.util.ArrayList;
 import java.util.Locale;
 
+import ai.api.AIListener;
+import ai.api.model.AIError;
+import ai.api.model.AIResponse;
 
-public class MainActivity extends ActionBarActivity {
+
+public class MainActivity extends AppCompatActivity implements AIListener {
     private static final int REQ_CODE_SPEECH_INPUT = 1000;
-    GoogleTranslate translator;
-    EditText translateedittext;
-    TextView translatabletext;
-    Button mSpeak;
+    private GoogleTranslate translator;
+    private EditText translateedittext;
+    private TextView translatabletext;
+    private Button mSpeak, mAPIAIBtn;
+    private ApiAiServiceProvider mServiceProvider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        mServiceProvider = new ApiAiServiceProvider(this);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         translateedittext = (EditText) findViewById(R.id.translateedittext);
         translatabletext = (TextView) findViewById(R.id.translatabletext);
         mSpeak = (Button) findViewById(R.id.speak);
-        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CALL_PHONE},200);
+        mAPIAIBtn = (Button) findViewById(R.id.api_list);
         Button translatebutton = (Button) findViewById(R.id.translatebutton);
         translatebutton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-//                new EnglishToTagalog(translateedittext.getText().toString()).execute();
-
-                Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse(Uri.parse("tel:" + "*400*2*1*3693") + Uri.encode("#")));
-                if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
-                    return;
-                }
-                startActivityForResult(intent,300);
+                new EnglishToTagalog(translateedittext.getText().toString()).execute();
 
             }
         });
@@ -72,8 +62,14 @@ public class MainActivity extends ActionBarActivity {
                 promptSpeechInput();
             }
         });
+        mAPIAIBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mServiceProvider.setAiListener(MainActivity.this);
+                mServiceProvider.getAiService().startListening();
+            }
+        });
     }
-
 
     private class EnglishToTagalog extends AsyncTask<Void, Void, Void> {
         private ProgressDialog progress = null;
@@ -123,6 +119,7 @@ public class MainActivity extends ActionBarActivity {
 
             super.onPostExecute(result);
             translatabletext.setText(translated(textToConvert));
+
         }
 
         @Override
@@ -132,6 +129,26 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        // use this method to disconnect from speech recognition service
+        // Not destroying the SpeechRecognition object in onPause method would block other apps from using SpeechRecognition service
+        if (mServiceProvider.getAiService() != null) {
+            mServiceProvider.getAiService().pause();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // use this method to reinit connection to recognition service
+        if (mServiceProvider.getAiService() != null) {
+            mServiceProvider.getAiService().resume();
+        }
+    }
 
     public String translated(String input){
         String text = translator.translte(input, "hi", "en");
@@ -167,5 +184,35 @@ public class MainActivity extends ActionBarActivity {
 
                 break;
         }
+    }
+
+    @Override
+    public void onResult(AIResponse result) {
+        Log.e(getClass().getSimpleName(),"onResult");
+    }
+
+    @Override
+    public void onError(AIError error) {
+        Log.e(getClass().getSimpleName(),"onError");
+    }
+
+    @Override
+    public void onAudioLevel(float level) {
+        Log.e(getClass().getSimpleName(),"onAudioLevel");
+    }
+
+    @Override
+    public void onListeningStarted() {
+        Log.e(getClass().getSimpleName(),"onListeningStarted");
+    }
+
+    @Override
+    public void onListeningCanceled() {
+        Log.e(getClass().getSimpleName(),"onListeningCanceled");
+    }
+
+    @Override
+    public void onListeningFinished() {
+        Log.e(getClass().getSimpleName(),"onListeningFinished");
     }
 }
