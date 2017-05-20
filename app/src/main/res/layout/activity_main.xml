@@ -52,5 +52,16 @@
         android:textStyle="bold"
         android:text="Speak" />
 
+    <Button
+        android:id="@+id/api_list"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/speak"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:text="API AI Listen" />
+
 
 </RelativeLayout>

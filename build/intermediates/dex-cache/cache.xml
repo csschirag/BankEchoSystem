@@ -3,6 +3,24 @@
 
     <item
         is-multidex="true"
+        jar="/Users/B0097489/.android/build-cache/5d256d52d4d6607c1b40e9a513a9349f880a5179/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="eff74f6c0ec5db858ddb943293604c0845217c76">
+        <dex dex="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ed0db5fdb828d040ff69530510b0594444acc843/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/B0097489/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.2/d7ef6ad7ff0711dd12fe409d62d72d6ed14516e0/log4j-api-2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7ef6ad7ff0711dd12fe409d62d72d6ed14516e0">
+        <dex dex="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/log4j-api-2.2_5d6cc367776662240eef645cfc83a496e63e2f55/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -12,11 +30,38 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/B0097489/.gradle/caches/modules-2/files-2.1/ai.api/libai/1.4.8/1386bf51c371e40bf1dc04920b04bd937c04e8ba/libai-1.4.8.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1386bf51c371e40bf1dc04920b04bd937c04e8ba">
+        <dex dex="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/libai-1.4.8_a51e50f8baee2a244b10f32ba70ac5f7ab9566e3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Applications/Android Studio.app/Contents/gradle/m2repository/commons-io/commons-io/2.4/commons-io-2.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/commons-io-2.4_db9d9c7f5dc9abc44c05f9a56b43532b2a4af315/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/B0097489/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.2/c707664e020218f8529b9a5e55016ee15f0f82ac/log4j-core-2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c707664e020218f8529b9a5e55016ee15f0f82ac">
+        <dex dex="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10/log4j-core-2.2_6791c0e24937a9a32e2f18a7289f93291a021cc6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="fc3845b1729aa9b4641f436e7b918d1276f30738">
+        sha1="a5bbeecda0ba95d13bf9250ab1d161b61286d315">
         <dex dex="/Users/B0097489/AndroidStudioProjects/BankEchoSystem/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_b439b510ba8f613da03ee25a75e1efb47a447cee/classes.dex" />
     </item>
 
