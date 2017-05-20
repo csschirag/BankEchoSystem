@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.system.bank.bankechosystem.api.ai.ApiAiDataProvider;
 import com.system.bank.bankechosystem.api.ai.ApiAiServiceProvider;
 
 import java.util.ArrayList;
@@ -118,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements AIListener {
 
             super.onPostExecute(result);
             translatabletext.setText(translated(textToConvert));
+            ApiAiDataProvider.requestData(translated(textToConvert));
 
         }
 

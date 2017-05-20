@@ -16,15 +16,15 @@ import static com.system.bank.bankechosystem.helper.Constants.API_AI_KEY;
 
 public class ApiAiDataProvider {
 
-    final AIConfiguration config = new AIConfiguration(API_AI_KEY,
+    static final AIConfiguration config = new AIConfiguration(API_AI_KEY,
             AIConfiguration.SupportedLanguages.English,
             AIConfiguration.RecognitionEngine.System);
 
-    final AIDataService aiDataService = new AIDataService(config);
+    static final AIDataService aiDataService = new AIDataService(config);
 
-    private AIRequest aiRequest;
+    private static AIRequest aiRequest;
 
-    public void requestData(String text) {
+    public static void requestData(String text) {
         if (text == null) {
             return;
         }
