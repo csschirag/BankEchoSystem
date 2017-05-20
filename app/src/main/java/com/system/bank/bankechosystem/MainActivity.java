@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity implements AIListener {
 
 
             } catch (Exception e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
             return null;
@@ -188,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements AIListener {
 
     @Override
     public void onResult(AIResponse result) {
-        Log.e(getClass().getSimpleName(),"onResult");
+        Log.e(getClass().getSimpleName(),"onResult " +result.getResult().getAction());
     }
 
     @Override
