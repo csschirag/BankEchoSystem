@@ -1,8 +1,10 @@
 package com.system.bank.bankechosystem.api.ai;
 
 import android.os.AsyncTask;
+import android.support.annotation.NonNull;
 
 import ai.api.AIDataService;
+import ai.api.AIListener;
 import ai.api.AIServiceException;
 import ai.api.android.AIConfiguration;
 import ai.api.model.AIRequest;
@@ -24,7 +26,7 @@ public class ApiAiDataProvider {
 
     private static AIRequest aiRequest;
 
-    public static void requestData(String text) {
+    public static void requestData(String text,@NonNull final AIListener aiListener) {
         if (text == null) {
             return;
         }
@@ -43,8 +45,10 @@ public class ApiAiDataProvider {
             }
             @Override
             protected void onPostExecute(AIResponse aiResponse) {
-                if (aiResponse != null) {
-                    // process aiResponse here
+                if (aiResponse != null && !aiResponse.isError()) {
+                    aiListener.onResult(aiResponse);
+                } else {
+                    aiListener.onError(null);
                 }
             }
         }.execute();
