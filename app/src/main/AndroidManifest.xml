@@ -25,6 +25,7 @@
             android:name=".Registration"
             android:label="@string/title_activity_registration"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".PayActivity"/>
     </application>
 
 </manifest>

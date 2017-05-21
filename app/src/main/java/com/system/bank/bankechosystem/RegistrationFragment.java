@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 
 import com.system.bank.bankechosystem.api.ai.ApiAiDataProvider;
 import com.system.bank.bankechosystem.api.ai.ApiAiHelper;
+import com.system.bank.bankechosystem.helper.SessionManager;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -157,16 +158,21 @@ public class RegistrationFragment extends Fragment implements View.OnClickListen
         }
         if (result.getResult().getAction().equalsIgnoreCase("submit")) {
             mTextToSpeech.speak("You have registered successfully.",TextToSpeech.QUEUE_FLUSH, null);
+            SessionManager.getInstance().setUserReg(true);
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setMessage("Successfully Registered");
+            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    getActivity().finish();
+                }
+            });
+            builder.create().show();
+        } else {
+            mTextToSpeech.speak("You have registered again.",TextToSpeech.QUEUE_FLUSH, null);
+            fillForm();
         }
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage("Successfully Registered");
-        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                getActivity().finish();
-            }
-        });
-        builder.create().show();
+
     }
 
 
