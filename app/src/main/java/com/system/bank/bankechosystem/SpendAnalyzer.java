@@ -2,21 +2,18 @@ package com.system.bank.bankechosystem;
 
 import android.graphics.Color;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.components.LimitLine;
-import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -34,54 +31,36 @@ public class SpendAnalyzer extends AppCompatActivity {
         setContentView(R.layout.activity_spend_analyzer);
         BarChart chart = (BarChart) findViewById(R.id.chart);
 
-        List<BarEntry> entries = new ArrayList<>();
-        BarEntry entry = new BarEntry(4f, 4F);
-        entries.add(new BarEntry(0f, 3f));
-        entries.add(new BarEntry(1f, 8f));
-        entries.add(new BarEntry(2f, 6f));
-        entries.add(new BarEntry(3f, 5f));
+        List<BarEntry> entries1 = new ArrayList<>();
+        BarEntry entry = new BarEntry(0f, 4F);
+        entries1.add(entry);
+        List<BarEntry> entries2 = new ArrayList<>();
+        BarEntry entry2 = new BarEntry(1f, 6F);
+        entries2.add(entry2);
+        BarDataSet set1 = new BarDataSet(entries1, "FOOD");
+        BarDataSet set2 = new BarDataSet(entries2, "ENTERTAINMENT");
+        set1.setColors( Color.YELLOW);
+        set2.setColors( Color.BLUE);
 
+        BarEntry entry3 = new BarEntry(2f, 6F);
+        List<BarEntry> entries3 = new ArrayList<>();
+        entries3.add(entry3);
+        BarDataSet set3 = new BarDataSet(entries3, "MISC");
+        set3.setColors( Color.RED);
 
-
-
-        Legend l = chart.getLegend();
-        l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
-        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
-        l.setOrientation(Legend.LegendOrientation.HORIZONTAL);
-        l.setDrawInside(false);
-        l.setForm(Legend.LegendForm.SQUARE);
-        l.setFormSize(9f);
-        l.setTextSize(11f);
-        l.setXEntrySpace(4f);
-
-
-        String[] str = {"FOOd", "Entertainment", "FOOd", "Entertainment", "FOOd"};
-        BarDataSet set = new BarDataSet(entries, "BarDataSet");
-        set.setColors( Color.YELLOW, Color.BLUE, Color.RED, Color.CYAN);
-        set.setStackLabels(str);
-        set.setAxisDependency(YAxis.AxisDependency.LEFT);
-        BarData data = new BarData(set);
+        BarData data = new BarData(set1, set2, set3);
         data.setBarWidth(0.6f); // set custom bar width
         chart.setData(data);
+        chart.setDrawBorders(false);
         chart.setDrawGridBackground(false);
         chart.setFitBars(true); // make the x-axis fit exactly all bars
         chart.invalidate(); // refresh
 
-//        List<BarEntry> entries = new ArrayList<>();
-//
-//        for (float data : dataObjects) {
-//
-//            // turn your data into Entry objects
-//            entries.add(new BarEntry(data, data));
-//        }
-//        BarDataSet dataSet = new BarDataSet(entries, "Label");
-//        BarData lineData = new BarData(dataSet);
-//        chart.setData(lineData);
-//        chart.invalidate(); // refresh
 
-        new PutData().execute();
-        new GetData().execute();
 
+
+//        new PutData().execute();
+//        new GetData().execute();
 
     }
 
@@ -100,6 +79,8 @@ public class SpendAnalyzer extends AppCompatActivity {
                         stringBuilder.append(line).append("\n");
                     }
                     bufferedReader.close();
+
+
                     return stringBuilder.toString();
                 }
                 finally{
@@ -115,6 +96,33 @@ public class SpendAnalyzer extends AppCompatActivity {
         @Override
         protected void onPostExecute(String aVoid) {
             Log.e("TAG", "data: " + aVoid);
+//            try {
+                ArrayList<TransactionDto> list = new ArrayList<>();
+                try {
+                    JSONArray obj = new JSONArray(aVoid);
+                    for(int i = 0 ; i< obj.length(); i++){
+                        Object o = obj.get(i);
+                        if ( o.equals("null")) {
+                            Log.e("TAG", "null found");
+                        }
+                        else {
+                            JSONObject data = obj.getJSONObject(i);
+                            if (data != null) {
+                                TransactionDto dto = new TransactionDto();
+                                dto.setAmount(data.getString("amount"));
+                                list.add(dto);
+                            }
+                        }
+
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                System.out.print(list);
+
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
             super.onPostExecute(aVoid);
         }
     }
@@ -150,16 +158,17 @@ public class SpendAnalyzer extends AppCompatActivity {
 //                            urlConnection.getOutputStream());
 //                    out.write("{\"amount\":34,\"id\":2,\"merchant_category\":\"food\",\"merchant_name\":\"tesr\",\"phone_number\":899999999,\"timestamp\":2333232}");
 //                    out.close();
-                    return null;
+//                    return null;
                 }
                 finally{
-                    urlConnection.disconnect();
+//                    urlConnection.disconnect();
                 }
             }
             catch(Exception e) {
                 Log.e("ERROR", e.getMessage(), e);
                 return null;
             }
+            return null;
         }
 
         @Override

@@ -64,17 +64,13 @@ public class TransactionDto {
         this.merchant_category = merchant_category;
     }
 
-    public JSONObject toJsonString(){
+    public String toJsonString(){
         String str = "{\"amount\":"+ amount+",\"id\":"+ id +",\"merchant_category\":\""+  merchant_category+"\"," +
                 "\"merchant_name\":\""+merchant_category+"\",\"phone_number\":"+ phone_number+"," +
                 "\"timestamp\":"+time+"}";
-        try {
-            return new JSONObject(str);
 
-        }catch (JSONException e){
-            e.printStackTrace();
-        }
+            return str;
 
-        return null;
+
     }
 }
