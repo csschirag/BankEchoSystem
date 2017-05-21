@@ -28,7 +28,7 @@ import ai.api.model.AIResponse;
 public class MainActivity extends AppCompatActivity implements AIListener, Result {
 
 //    private TextView translatabletext;
-    private Button mSpeak;
+    private Button mSpeak, mSpendAnalyzer;
     private ApiAiHelper mAiHelper;
     private TextToSpeech mTextToSpeech;
     private Handler mHandler;
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements AIListener, Resul
         StrictMode.setThreadPolicy(policy);
 //        translatabletext = (TextView) findViewById(R.id.translatabletext);
         mSpeak = (Button) findViewById(R.id.speak);
+        mSpendAnalyzer = (Button) findViewById(R.id.spend_analyzer);
         mTextToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
@@ -66,29 +67,24 @@ public class MainActivity extends AppCompatActivity implements AIListener, Resul
             }
         });
 
-    }
+        mSpendAnalyzer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (SessionManager.getInstance().isUserReg()) {
+                    Intent intent = new Intent(MainActivity.this, SpendAnalyzer.class);
+                    startActivity(intent);
+                } else {
+                    mTextToSpeech.speak("Sorry you are not a bank customer you have to register.do you want to register.", TextToSpeech.QUEUE_FLUSH, null);
+                    mHandler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mAiHelper.promptSpeechInput(MainActivity.this,REQ_CODE_SPEECH_INPUT);
+                        }
+                    },3000);
+                }
+            }
+        });
 
-
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        // use this method to disconnect from speech recognition service
-        // Not destroying the SpeechRecognition object in onPause method would block other apps from using SpeechRecognition service
-//        if (mAiHelper.getServiceProvider().getAiService() != null) {
-//            mAiHelper.getServiceProvider().getAiService().pause();
-//        }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        // use this method to reinit connection to recognition service
-//        if (mAiHelper.getServiceProvider().getAiService() != null) {
-//            mAiHelper.getServiceProvider().getAiService().resume();
-//        }
     }
 
     @Override
@@ -119,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements AIListener, Resul
             Intent intent = new Intent(this,PayActivity.class);
             startActivity(intent);
         } else if ("pay".equalsIgnoreCase(result.getResult().getAction()) && !SessionManager.getInstance().isUserReg()) {
-            mTextToSpeech.speak("Sorry you are not a bank customer first you have to register you self. so do you want to register.", TextToSpeech.QUEUE_FLUSH, null);
+            mTextToSpeech.speak("Sorry you are not a bank customer you have to register.do you want to register.", TextToSpeech.QUEUE_FLUSH, null);
             mHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {

@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="How may i help you."
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="50dp"
         android:textSize="25sp" />
 
     <Button
@@ -27,8 +27,21 @@
         android:textAllCaps="false"
         android:textColor="#FFF"
         android:textSize="16sp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_below="@+id/translatabletext"
-        android:text="Airtel" />
+        android:text="Airtel \nAI" />
+
+    <Button
+        android:id="@+id/spend_analyzer"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/spend_analyzer"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/speak"
+        android:text="Spend Analyzer" />
 
 </RelativeLayout>
